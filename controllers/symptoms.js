@@ -4,12 +4,12 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
     db.symptom.findAll().then(function(symptoms) {
-        res.render("symptoms/all");
+        res.render("symptoms/all", { symptoms: symptoms });
     });
 });
 
 router.post("/", function(req, res) {
-    db.symptom.create(req.body).then(function(sympton) {
+    db.symptom.create(req.body).then(function(symptom) {
         res.redirect("/symptoms");
     }).catch(function(error) {
         console.log("error occured", error);

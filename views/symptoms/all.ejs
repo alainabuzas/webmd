@@ -1,13 +1,11 @@
-<div class="text-center">
-
-<h1>Which of these do you have?</h1>
-<% if (symptoms) { %>
-	<% symptoms.forEach(function(s){ %>
-		<div>
-		<a href="/symptoms/<%= s.id %>">
-		<%= s.name %>
-		</a>
-		</div>
-		<% }); %>
-<% } %>
+<div class="text-center container">
+    <h1>All Symptoms</h1>
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/ae/de/55/aede554c98ee3597216fcf5bc65220b9.jpg">
+    <ul class="list-group">
+    <% symptoms.forEach(function(s){ %>
+      <li class="list-group-item"><a href="/symptoms/ <%=s.id%>">
+      <%=s.name %>
+      </a></li>
+      <% }); %>
+      </ul>
 </div>
